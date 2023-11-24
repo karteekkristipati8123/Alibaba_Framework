@@ -26,9 +26,10 @@ public class Base {
 		FileReader fr1= new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\configFiles\\locators.properties");
 		prop.load(fr);
 		loc.load(fr1);
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\KARTHIK REDDY\\eclipse-workspace\\Alibaba_Framework\\drivers\\chromedriver.exe");
+//		WebDriverManager.chromedriver().setup();
 		ChromeOptions op = new ChromeOptions();
-		op.addArguments("--remote-allow-origins=*");
+		op.setBinary("C:\\Users\\KARTHIK REDDY\\Downloads\\chrome-win64\\chrome.exe");
 		driver = new ChromeDriver(op);
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));
